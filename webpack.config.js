@@ -7,7 +7,7 @@ module.exports = {
     output: {
         // 需要使用绝对路径
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: '[name].[contenthash].js',
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -29,5 +29,25 @@ module.exports = {
             overlay: false, // 当出现编译错误或警告时，在浏览器中显示全屏覆盖。 true / false
         },
         watchFiles: ['./src/index.html'],
+    },
+    module: {
+        // 规则 --匹配规则以及匹配文件使用的loader
+        rules: [
+            {
+                test: /\.css$/,
+                // 从右往左执行
+                use: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.less$/,
+                // 从右往左执行
+                use: ['style-loader', 'css-loader', 'less-loader']
+            },
+            {
+                test: /\.(jpg|png|gif|jpeg|svg)$/,
+                // webpack内置的，b不用use可以直接指定type
+                type: 'asset/resource'
+            }
+        ]
     }
 } 

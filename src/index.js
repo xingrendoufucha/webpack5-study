@@ -1,3 +1,8 @@
+import './style/index.less'
+import imgSrc from  './assets/images/xiaoqing.jpg'
+let img = document.createElement('img')
+img.src = imgSrc
+document.body.appendChild(img)
 function run() {
   console.log('跑起来了244')
 }

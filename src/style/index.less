@@ -1,0 +1,21 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: #e92322;
+}
+.bg-img {
+    position: relative;
+    width: 280px;
+    height: 396px;
+    background-image: url('../assets/images/xiaoqing.jpg');
+    background-size: contain;
+    &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        content: '';
+        width: 30px;
+        height: 30px;
+        background-color: #ccc;
+    }
+}
