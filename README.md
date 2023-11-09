@@ -18,3 +18,10 @@
  - html-webpack-plugin 
     - [html-webpack-plugin](https://www.webpackjs.com/plugins/html-webpack-plugin)
     - 处理html文件
+### 模块
+- css    
+    - css-loader 让webpack可以识别css文件
+    - style-loader 把css文件插入到html文件中
+    - mini-css-extract-plugin 把css文件打包成单独文件
+- file 图片文件等都可以使用webpack内置处理
+ - [图片/文件处理](https://webpackjs.com/configuration/module/#moduleparser)
