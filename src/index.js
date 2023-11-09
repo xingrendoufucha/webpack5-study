@@ -1,11 +1,11 @@
-import _ from 'lodash'
+function run() {
+  console.log('跑起来了244')
+}
+run()
 
-function component() {
-    const element = document.createElement('div');
-  
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  
-    return element;
-  }
-  
-  document.body.appendChild(component());
+// 判断是否开启了热更新
+if(module.hot) {
+  module.hot.accept(() => {
+    console.log('更新失败')
+  })
+}
